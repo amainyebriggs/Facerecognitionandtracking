@@ -8,7 +8,10 @@ import cv2
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
 # Open the input movie file
-input_movie = cv2.VideoCapture("hamilton_clip.mp4")
+video_name = input('Please give the video name including its extension or drag and drop. E.g. \"amainyebriggs.avi\":\n')
+input_movie = cv2.VideoCapture(video_name)
+if (input_movie.isOpened()== False): 
+  print("Error opening video stream or file")
 length = int(input_movie.get(cv2.CAP_PROP_FRAME_COUNT))
 
 # Create an output movie file (make sure resolution/frame rate matches input video!)
